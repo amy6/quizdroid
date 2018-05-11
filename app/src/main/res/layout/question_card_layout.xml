@@ -5,10 +5,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:alpha="0.7"
     app:cardCornerRadius="@dimen/dimen_8dp"
     app:cardElevation="@dimen/dimen_4dp"
-    app:cardUseCompatPadding="true"
-    android:alpha="0.7">
+    app:cardUseCompatPadding="true">
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
@@ -29,73 +29,75 @@
             app:layout_constraintTop_toTopOf="parent"
             tools:text="TextView" />
 
-        <Button
-            android:id="@+id/option1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:background="@android:color/white"
-            android:textAllCaps="false"
-            android:textColor="@android:color/black"
-            app:layout_constraintEnd_toStartOf="@+id/option2"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/question"
-            tools:text="Option1" />
-
-        <Button
-            android:id="@+id/option2"
-            android:layout_width="0dp"
+        <example.com.quizdroid.ToggleButtonGroupTableLayout
+            android:id="@+id/table_layout"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="16dp"
-            android:background="@android:color/white"
-            android:textAllCaps="false"
-            android:textColor="@android:color/black"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/option1"
-            app:layout_constraintTop_toBottomOf="@+id/question"
-            app:layout_constraintVertical_bias="0.0"
-            tools:text="Option2" />
-
-        <Button
-            android:id="@+id/option3"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
-            android:layout_marginStart="16dp"
+            android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
-            android:background="@android:color/white"
-            android:textAllCaps="false"
-            android:textColor="@android:color/black"
-            app:layout_constraintEnd_toStartOf="@+id/option4"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/option1"
-            tools:text="Option3" />
-
-        <Button
-            android:id="@+id/option4"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginTop="8dp"
-            android:background="@android:color/white"
-            android:textAllCaps="false"
-            android:textColor="@android:color/black"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/option3"
-            app:layout_constraintTop_toBottomOf="@+id/option2"
-            tools:text="Option4" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/question">
+
+            <TableRow>
+
+                <RadioButton
+                    android:id="@+id/rb1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Button1"
+                    android:background="@drawable/button_background"
+                    android:button="@android:color/transparent"
+                    android:padding="@dimen/dimen_16dp"
+                    android:layout_margin="@dimen/dimen_16dp"
+                    android:gravity="center"/>
+
+                <RadioButton
+                    android:id="@+id/rb2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Button2"
+                    android:background="@drawable/button_background"
+                    android:button="@android:color/transparent"
+                    android:padding="@dimen/dimen_16dp"
+                    android:layout_margin="@dimen/dimen_16dp"
+                    android:gravity="center"/>
+
+            </TableRow>
+
+            <TableRow>
+
+                <RadioButton
+                    android:id="@+id/rb3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Button3"
+                    android:background="@drawable/button_background"
+                    android:button="@android:color/transparent"
+                    android:padding="@dimen/dimen_16dp"
+                    android:layout_margin="@dimen/dimen_16dp"
+                    android:gravity="center"/>
+
+                <RadioButton
+                    android:id="@+id/rb4"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Button4"
+                    android:background="@drawable/button_background"
+                    android:button="@android:color/transparent"
+                    android:padding="@dimen/dimen_16dp"
+                    android:layout_margin="@dimen/dimen_16dp"
+                    android:gravity="center"/>
+
+            </TableRow>
+        </example.com.quizdroid.ToggleButtonGroupTableLayout>
 
     </android.support.constraint.ConstraintLayout>
 

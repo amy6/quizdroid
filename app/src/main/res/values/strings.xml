@@ -23,6 +23,7 @@
     <string name="words">words</string>
     <string name="india">india</string>
     <string name="science">science</string>
+    <string name="grid_image">Grid Image</string>
     <string-array name="category_ID">
         <item>@string/sports</item>
         <item>@string/tv</item>

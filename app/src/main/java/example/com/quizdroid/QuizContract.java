@@ -2,7 +2,7 @@ package example.com.quizdroid;
 
 import android.provider.BaseColumns;
 
-public final class QuizContract {
+final class QuizContract {
 
     private QuizContract() {
     }

@@ -16,7 +16,7 @@ import example.com.quizdroid.QuizContract.QuestionsTable;
 public class QuizDBHelper extends SQLiteOpenHelper {
 
     private static final String DB_NAME = "quizzes.db";
-    private static final int DB_VERSION = 5;
+    private static final int DB_VERSION = 8;
 
     public static final String CATEGORY_SPORTS = "sports";
     public static final String CATEGORY_TV = "tv";
@@ -85,8 +85,8 @@ public class QuizDBHelper extends SQLiteOpenHelper {
         mQuestionList.add(new Question("Which famous person does Phoebe believe is her Grandfather?", "Albert Einstein", "Isaac Newton", "Winston Churchill", "Beethoven", "Albert Einstein", CATEGORY_TV));
         mQuestionList.add(new Question("What is the name of the main family in this US TV series - Beverly Hills, 90210", "Keaton", "Walsh", "Tanner", "Crane", "Walsh", CATEGORY_TV));
         mQuestionList.add(new Question("What is Sheldon's middle name?", "Leonard", "John", "Lee", "Brian", "Lee", CATEGORY_TV));
-        mQuestionList.add(new Question("What was finally revealed to be Jon Snow's real name in Game of Thrones?", "Aemon Targaryen", "Aegon Targaryen", "Viserys Targeryan", "Rhaegar Targeryan", "Rajasthan", CATEGORY_TV));
-        mQuestionList.add(new Question("What is Pied Piper?", "A lossless compression software", "A scary story", "A song", "A bank", "A lossless compression software", CATEGORY_TV));
+        mQuestionList.add(new Question("What was finally revealed to be Jon Snow's real name in Game of Thrones?", "Aemon Targaryen", "Aegon Targaryen", "Viserys Targeryan", "Rhaegar Targeryan", "Aegon Targaryen", CATEGORY_TV));
+        mQuestionList.add(new Question("What is Pied Piper?", "A company", "A scary story", "A song", "A bank", "A company", CATEGORY_TV));
 
         //questions for category science
         mQuestionList.add(new Question("What is the first element on the periodic table?", "Uranium", "Helium", "Hydrogen", "Carbon", "Hydrogen", CATEGORY_SCIENCE));

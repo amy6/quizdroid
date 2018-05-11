@@ -2,11 +2,11 @@ package example.com.quizdroid;
 
 public class CategoryItem {
 
-    int mBgColor;
-    String mCategoryTitle;
-    String mCategoryID;
+    private int mBgColor;
+    private String mCategoryTitle;
+    private String mCategoryID;
 
-    public CategoryItem(int imageId, String categoryTitle, String categoryID) {
+    CategoryItem(int imageId, String categoryTitle, String categoryID) {
         this.mBgColor = imageId;
         this.mCategoryTitle = categoryTitle;
         this.mCategoryID = categoryID;

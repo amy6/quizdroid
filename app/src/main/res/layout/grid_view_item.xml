@@ -12,21 +12,25 @@
         android:layout_height="wrap_content"
         tools:src="@tools:sample/avatars"
         android:minHeight="@dimen/dimen_200dp"
-        android:minWidth="@dimen/dimen_200dp"/>
+        android:minWidth="@dimen/dimen_200dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?selectableItemBackgroundBorderless"
+        android:contentDescription="@string/grid_image" />
 
     <TextView
         android:id="@+id/category_title"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:alpha="0.7"
-        android:background="@android:color/background_light"
-        android:gravity="center|bottom"
+        android:gravity="center"
+        android:textColor="@android:color/white"
+        android:layout_margin="@dimen/dimen_16dp"
         android:textAppearance="?android:textAppearanceMedium"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintVertical_bias="0.5"
         tools:text="Category" />
 
 

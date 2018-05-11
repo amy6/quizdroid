@@ -11,10 +11,10 @@ public class Question {
     private String mCategory;
 
 
-    public Question() {
+    Question() {
     }
 
-    public Question(String mQuestion, String option1, String option2, String option3, String option4, String answer, String category) {
+    Question(String mQuestion, String option1, String option2, String option3, String option4, String answer, String category) {
         this.mQuestion = mQuestion;
         this.mOption1 = option1;
         this.mOption2 = option2;

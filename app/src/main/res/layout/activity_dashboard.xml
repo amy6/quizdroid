@@ -52,7 +52,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:numColumns="3"
-            android:layout_margin="@dimen/dimen_16dp"
             android:gravity="center"
             android:layout_gravity="center"
             android:scrollbars="vertical"
@@ -70,4 +69,5 @@
         android:src="@drawable/ic_insert_emoticon_black_24dp"
         app:layout_anchor="@id/appBar"
         app:layout_anchorGravity="bottom|end" />
+
 </android.support.design.widget.CoordinatorLayout>
