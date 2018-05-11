@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="purple">#AB47BC</color>
+    <color name="teal">#26A69A</color>
+    <color name="cyan">#26C6DA</color>
+    <color name="orange">#FFA726</color>
+    <color name="pink">#EC407A</color>
+    <color name="lightgreen">#9CCC65</color>
+
+    <array name="colors">
+        <item>@color/purple</item>
+        <item>@color/teal</item>
+        <item>@color/cyan</item>
+        <item>@color/orange</item>
+        <item>@color/pink</item>
+        <item>@color/lightgreen</item>
+    </array>
+
+    <color name="green">#9CCC65</color>
+    <color name="red">#EF5350</color>
+</resources>
