@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.support.constraint.ConstraintLayout;
 import android.widget.TableLayout;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -23,6 +24,9 @@ public class QuestionActivity extends AppCompatActivity {
     private QuizDBHelper mDbHelper;
 
     private ConstraintLayout mParentLayout;
+    private static TextView mScoreTextView;
+    private static int mTotalQuestions;
+    static int mScore;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +45,8 @@ public class QuestionActivity extends AppCompatActivity {
             mParentLayout.setBackgroundColor(Color.parseColor(hexColor));
         }
 
+        mScoreTextView = findViewById(R.id.score);
+
         mRecyclerView = findViewById(R.id.recyclerView);
         mRecyclerView.setNestedScrollingEnabled(false);
         mRecyclerView.setHasFixedSize(true);
@@ -48,10 +54,18 @@ public class QuestionActivity extends AppCompatActivity {
         mDbHelper = new QuizDBHelper(this, categoryBundle);
         if (categoryBundle != null) {
             mQuestionList = mDbHelper.getAllQuestions(categoryBundle.getString(CATEGORY_ID));
+            mTotalQuestions = mQuestionList.size();
+            mScore = 0;
+            displayScore();
         }
         mAdapter = new QuestionAdapter(this, mQuestionList);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         mRecyclerView.setAdapter(mAdapter);
+    }
+
+    public static void displayScore() {
+        String scoreString = "Score " + mScore + "/" + mTotalQuestions;
+        mScoreTextView.setText(scoreString);
     }
 
 }

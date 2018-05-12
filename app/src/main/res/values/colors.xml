@@ -20,6 +20,8 @@
         <item>@color/lightgreen</item>
     </array>
 
-    <color name="green">#9CCC65</color>
-    <color name="red">#EF5350</color>
+    <color name="transparent_green">#7700ff00</color>
+    <color name="transparent_red">#77ff0000</color>
+    <color name="transparent_grey">#77cccccc</color>
+    <color name="transparent_black">#55000000</color>
 </resources>

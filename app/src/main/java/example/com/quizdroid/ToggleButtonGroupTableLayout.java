@@ -1,7 +1,5 @@
 package example.com.quizdroid;
 
-import android.animation.ArgbEvaluator;
-import android.animation.ValueAnimator;
 import android.content.Context;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
@@ -49,12 +47,14 @@ public class ToggleButtonGroupTableLayout extends TableLayout  {
         int id = -1;
         rb.setChecked(true);
         if(rb.getText().equals(answer)) {
-            rb.getBackground().setColorFilter(Color.parseColor("#7700ff00"), PorterDuff.Mode.MULTIPLY);
+            setRadioButtonBackgroundColor(rb, R.color.transparent_green);
+            QuestionActivity.mScore++;
+            QuestionActivity.displayScore();
         } else {
-            rb.getBackground().setColorFilter(Color.parseColor("#77ff0000"), PorterDuff.Mode.MULTIPLY);
+            setRadioButtonBackgroundColor(rb, R.color.transparent_red);
             for(RadioButton radioButton:getChildren()) {
                 if(radioButton.getText().equals(answer)) {
-                    radioButton.getBackground().setColorFilter(Color.parseColor("#7700ff00"), PorterDuff.Mode.MULTIPLY);
+                    setRadioButtonBackgroundColor(radioButton, R.color.transparent_green);
                     id = radioButton.getId();
                 }
             }
@@ -63,10 +63,14 @@ public class ToggleButtonGroupTableLayout extends TableLayout  {
         for(RadioButton radioButton:getChildren()) {
             radioButton.setClickable(false);
             if(radioButton.getId() != rb.getId() && radioButton.getId() != id){
-                radioButton.getBackground().setColorFilter(Color.parseColor("#77cccccc"), PorterDuff.Mode.MULTIPLY);
-                radioButton.setTextColor(Color.parseColor("#55000000"));
+                setRadioButtonBackgroundColor(radioButton, R.color.transparent_grey);
+                radioButton.setTextColor(getResources().getColor(R.color.transparent_black));
             }
         }
 
+    }
+
+    private void setRadioButtonBackgroundColor(RadioButton button, int colorId) {
+        button.getBackground().setColorFilter(Color.parseColor(getContext().getString(colorId)), PorterDuff.Mode.MULTIPLY);
     }
 }
