@@ -44,7 +44,7 @@ public class QuestionAdapter extends RecyclerView.Adapter {
             rb.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    questionViewHolder.mTableLayout.checkAnswer(rb, question.getmAnswer());
+                    questionViewHolder.mTableLayout.checkAnswer(rb, question.getmAnswer(), mContext);
                 }
             });
         }

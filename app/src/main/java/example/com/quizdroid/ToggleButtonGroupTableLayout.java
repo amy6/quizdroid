@@ -40,7 +40,7 @@ public class ToggleButtonGroupTableLayout extends TableLayout  {
         return radioButtons;
     }
 
-    public void checkAnswer(final RadioButton rb, String answer) {
+    public void checkAnswer(final RadioButton rb, String answer, Context mContext) {
         if(mActiveRadioButton != null) {
             mActiveRadioButton.setChecked(false);
         }
@@ -48,7 +48,7 @@ public class ToggleButtonGroupTableLayout extends TableLayout  {
         rb.setChecked(true);
         if(rb.getText().equals(answer)) {
             setRadioButtonBackgroundColor(rb, R.color.transparent_green);
-            QuestionActivity.mScore++;
+            ((QuestionActivity) mContext).updateScore();
         } else {
             setRadioButtonBackgroundColor(rb, R.color.transparent_red);
             for(RadioButton radioButton:getChildren()) {
@@ -58,7 +58,7 @@ public class ToggleButtonGroupTableLayout extends TableLayout  {
                 }
             }
         }
-        QuestionActivity.displayScore();
+        ((QuestionActivity) mContext).displayScore();
         mActiveRadioButton = rb;
         for(RadioButton radioButton:getChildren()) {
             radioButton.setClickable(false);

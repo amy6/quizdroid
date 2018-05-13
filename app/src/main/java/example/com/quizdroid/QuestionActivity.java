@@ -24,10 +24,10 @@ public class QuestionActivity extends AppCompatActivity {
     private QuizDBHelper mDbHelper;
 
     private ConstraintLayout mParentLayout;
-    private static TextView mScoreTextView;
-    private static TextView mRemaningQuestionsTextView;
-    private static int mTotalQuestions;
-    static int mScore;
+    private TextView mScoreTextView;
+    private TextView mRemaningQuestionsTextView;
+    private int mTotalQuestions;
+    private int mScore;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,10 +65,13 @@ public class QuestionActivity extends AppCompatActivity {
         mRecyclerView.setAdapter(mAdapter);
     }
 
-    public static void displayScore() {
+    public void displayScore() {
         String scoreString = "Score " + mScore + "/" + mTotalQuestions;
         mScoreTextView.setText(scoreString);
         mRemaningQuestionsTextView.setText("Remaining: " + mTotalQuestions--);
     }
 
+    public void updateScore() {
+        mScore++;
+    }
 }
