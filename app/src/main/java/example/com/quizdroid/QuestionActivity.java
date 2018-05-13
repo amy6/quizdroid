@@ -25,6 +25,7 @@ public class QuestionActivity extends AppCompatActivity {
 
     private ConstraintLayout mParentLayout;
     private static TextView mScoreTextView;
+    private static TextView mRemaningQuestionsTextView;
     private static int mTotalQuestions;
     static int mScore;
 
@@ -46,6 +47,7 @@ public class QuestionActivity extends AppCompatActivity {
         }
 
         mScoreTextView = findViewById(R.id.score);
+        mRemaningQuestionsTextView = findViewById(R.id.remaining_questions);
 
         mRecyclerView = findViewById(R.id.recyclerView);
         mRecyclerView.setNestedScrollingEnabled(false);
@@ -66,6 +68,7 @@ public class QuestionActivity extends AppCompatActivity {
     public static void displayScore() {
         String scoreString = "Score " + mScore + "/" + mTotalQuestions;
         mScoreTextView.setText(scoreString);
+        mRemaningQuestionsTextView.setText("Remaining: " + mTotalQuestions--);
     }
 
 }

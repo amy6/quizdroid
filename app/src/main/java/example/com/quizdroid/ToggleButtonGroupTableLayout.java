@@ -49,7 +49,6 @@ public class ToggleButtonGroupTableLayout extends TableLayout  {
         if(rb.getText().equals(answer)) {
             setRadioButtonBackgroundColor(rb, R.color.transparent_green);
             QuestionActivity.mScore++;
-            QuestionActivity.displayScore();
         } else {
             setRadioButtonBackgroundColor(rb, R.color.transparent_red);
             for(RadioButton radioButton:getChildren()) {
@@ -59,6 +58,7 @@ public class ToggleButtonGroupTableLayout extends TableLayout  {
                 }
             }
         }
+        QuestionActivity.displayScore();
         mActiveRadioButton = rb;
         for(RadioButton radioButton:getChildren()) {
             radioButton.setClickable(false);
