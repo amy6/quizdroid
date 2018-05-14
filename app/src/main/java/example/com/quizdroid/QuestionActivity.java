@@ -12,6 +12,7 @@ import android.widget.TableLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 import static example.com.quizdroid.CategoryAdapter.CATEGORY_COLOR;
 import static example.com.quizdroid.CategoryAdapter.CATEGORY_ID;
@@ -33,6 +34,9 @@ public class QuestionActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_question);
+
+        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
 
         Bundle categoryBundle = null;
         if (getIntent() != null) {
@@ -60,7 +64,7 @@ public class QuestionActivity extends AppCompatActivity {
             mScore = 0;
             displayScore();
         }
-        mAdapter = new QuestionAdapter(this, mQuestionList);
+        mAdapter = new QuestionAdapter(this, mQuestionList, categoryBundle.getString(CATEGORY_ID));
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         mRecyclerView.setAdapter(mAdapter);
     }
